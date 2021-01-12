@@ -1,0 +1,196 @@
+/*import React from "react";
+import { useParams } from "react-router";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import back from "../Icons/Images/back777.png";
+import Peer from "peerjs"
+
+import { CTX } from "./Store";
+
+//var data = [1, 2, 3]
+//data.unshift("Contact Name")
+//const authorId = "thispropsuser";
+//const messages = [{ authorId: "nick", message: "hello" }]
+export default function Dashboard({ handleSent }) {
+  let { id } = useParams();
+  const authorId = useSelector(state => state.firebase.profile.username);
+  const [chosenTopic, setTopic] = React.useState(id);
+  const [message, setMessage] = React.useState("");
+  const { allChats, sendChat } = React.useContext(CTX);
+  const topics = Object.keys(allChats);
+  console.log(allChats);
+  console.log(chosenTopic);
+  console.log(String(authorId));
+  console.log(id);
+  //console.log(message);
+  //console.log(chosenTopic);
+  
+
+  React.useEffect(() => {
+  this.peer = new Peer(String(authorId), {
+    debug:3,
+    secure: true,
+    host: "thumbprint.herokuapp.com",
+    port: 443,
+    config: {'iceServers': [{ 'urls': 'stun:stun.l.google.com:19302' }]}
+    //path: '/myapp'
+  }); 
+  this.conn = this.peer.connect(String(id));
+  this.conn.on('open', (id) => {
+    console.log(id)
+    this.conn.send('hi!');
+  });
+  this.peer.on('connection', (conn) => {
+    console.log("connected the users")
+    this.conn.on('data', (data) => {
+      // Will print 'hi!'
+    if (this.conn) {
+      this.conn.on('open', function() {
+          this.conn.send("Already connected to another client");
+          setTimeout(function() { this.conn.close(); }, 500);
+      });
+      return;
+  }
+      console.log(data);
+    });
+    this.conn.on('open', () => {
+      this.conn.send('hello!');
+    });
+  });
+  this.peer.on('error', function (err) {
+    console.log(err);
+    alert('' + err);
+  });
+  this.peer.on('close', function() {
+    this.conn = null;
+    alert("Connection destroyed. Please refresh")
+    console.log('Connection destroyed');
+  });
+  }, []);
+  /*
+  var lastPeerId = null;
+var peer = new Peer();
+var conn;
+peer.on("open", function (id) {
+    console.log("my id", id)
+});
+peer.on('connection', function (c) {
+    // Allow only a single connection
+    if (conn) {
+        c.on('open', function() {
+            c.send("Already connected to another client");
+            setTimeout(function() { c.close(); }, 500);
+        });
+        return;
+    }
+
+    conn = c;
+    console.log("Connected to: " + conn.peer);
+});
+
+peer.on("connection", function (conn) {
+    console.log("new connection")
+    conn.on("data", function (data) {
+        console.log("received", data);
+        setTimeout(() => {
+            console.log("answer")
+            conn.send("Hi back!")
+        }, 3000)
+    });
+});
+
+peer.on('disconnected', function () {
+ alert("Connection lost. Please reconnect")
+  console.log('Connection lost. Please reconnect');
+
+  // Workaround for peer.reconnect deleting previous id
+  peer.id = lastPeerId;
+  peer._lastServerId = lastPeerId;
+  peer.reconnect();
+});
+peer.on('close', function() {
+  conn = null;
+  alert("Connection destroyed. Please refresh")
+  console.log('Connection destroyed');
+});
+peer.on('error', function (err) {
+  console.log(err);
+  alert('' + err);
+});
+
+window.connect = (id) => {
+    conn = peer.connect(id);
+    conn.on("open", function () {
+        console.log("send hi")
+        conn.send("hi!");
+    });
+    conn.on("data", function (data) {
+        console.log("received", data);
+    });
+}
+  return (
+    <div className="enclosechatter">
+      <div className="dash">
+        <div className="topicsbox">
+          <div>
+            <div>{chosenTopic}</div>
+            {topics.map(thing => (
+              <div onClick={() => setTopic(thing)}>{thing}</div>
+            ))}
+          </div>
+          <div type="submit" className="sendbutton">
+            Send
+          </div>
+        </div>
+
+        <div className="chatbox">
+
+          <form onSubmit={e => {
+                e.preventDefault();
+              return false}}>
+            <input
+              onChange={e => setTopic(e.target.value)}
+              className="chattitle"
+              value={chosenTopic}
+              placeholder={chosenTopic}
+            />
+          </form>
+
+          <Link to="/chats">
+            <img onClick={() => {this.conn.close(); this.peer.destroy()}}src={back} alt="error" className="backgochat" />
+          </Link>
+<div className="enclosechats" onClick={() => this.peer.on('disconnected', () => this.peer.reconnect(id))}>
+              {allChats &&
+                allChats[chosenTopic] &&
+                allChats[chosenTopic].map(message => (
+                  <div>
+                    {message.authorId}:{message.message}
+                  </div>
+                ))}
+                </div>
+
+
+            <form
+              onSubmit={e => {
+                e.preventDefault();
+                sendChat({
+                  authorId,
+                  recipient: id,
+                  message,
+                  topic: chosenTopic
+                });
+                setMessage("");
+              }}
+            >
+              <input
+                className="chatinput"
+                value={message}
+                onChange={e => setMessage(e.target.value)}
+              />
+            </form>
+          </div>
+      </div>
+    </div>
+  );
+}
+*/

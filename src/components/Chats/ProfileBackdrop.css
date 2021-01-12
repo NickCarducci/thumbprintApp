@@ -1,0 +1,235 @@
+.profile_backdrop {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 15;
+  top: 0;
+  right: 0;
+}
+.profile_slide-drawer {
+  display: flex;
+  position: fixed;
+  background: white;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 10px;
+  top: 76px;
+  width: 90%;
+  left: 5%;
+  z-index: 150;
+  border-radius: 45px;
+  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+  transform: translateY(800%);
+  transition: transform 0.3s ease-out;
+}
+.profile_slide-drawer.open {
+  display: flex;
+  position: absolute;
+  transform: translateY(0);
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 10px;
+  top: 76px;
+  width: 90%;
+  left: 5%;
+  z-index: 150;
+  border-radius: 45px;
+  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-out;
+}
+.profileinfo {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 70%;
+  top: 0px;
+}
+.profileinfo input::placeholder {
+  color: #999;
+}
+.logoutbtn {
+  height: 56px;
+}
+.chatter {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+.enclosechatter {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  transform: translateX(0%);
+  transition: transform 0.3s ease-out;
+  z-index: 9999;
+}
+.enclosechatterhide {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  transform: translateX(-120%);
+  transition: transform 0.3s ease-out;
+}
+.App {
+  text-align: center;
+}
+.backgochat {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  right: 25px;
+  z-index: 99999;
+}
+.dash {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  position: absolute;
+  flex-direction: row;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+.topicsbox {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #333;
+}
+.topicsbox div {
+  display: flex;
+  flex-direction: column;
+}
+.topicsbox div div {
+  display: flex;
+  position: relative;
+  padding: 10px;
+  border: 1px solid #333;
+}
+.chattitle {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  text-indent: 36px;
+  height: 56px;
+  width: 100%;
+  border: 1px solid #333;
+  background-color: white;
+  align-items: center;
+}
+.chattitle::placeholder {
+  color: #333;
+}
+.chatbox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-end;
+  justify-content: space-between;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 1px solid #333;
+}
+.chatbox div div {
+  position: relative;
+  text-indent: 6px;
+  padding: 10px;
+}
+.chatinput {
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 56px;
+}
+.sendbutton {
+  height: 46px;
+  width: 60%;
+  margin: 30px auto;
+  border: 1px solid #333;
+  justify-content: center;
+  align-items: center;
+}
+.listedUserQuery {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  top: 56px;
+  z-index: 9999;
+}
+.listedUserQuery div {
+  display: flex;
+  position: relative;
+  height: 56px;
+  width: 100%;
+}
+.enclosechats {
+  margin-top: 106px;
+  margin-bottom: 76px;
+  z-index: -10;
+  border: 5px #333 solid;
+}
+
+.tilesselectedprofile {
+  display: flex;
+  position: relative;
+  top: 0px;
+  width: 97%;
+  padding: 5px;
+  height: auto;
+  max-width: 600px;
+  border-radius: 30px;
+}
+.tilesnotselectedprofile {
+  display: flex;
+  position: relative;
+  width: 97%;
+  padding: 5px;
+  height: auto;
+  max-height: 160px;
+  max-width: 600px;
+  border-radius: 30px;
+}
+.chatname {
+  display: flex;
+  position: relative;
+  top: 0px;
+  padding-left: 15px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 56px;
+  border-bottom: 1px #999 solid;
+}
+.connectionsignaloff {
+  /*content: " \25CF";*/
+  font-size: 25px;
+  color: #333;
+  margin-right: 35px;
+}
+
+.connectionsignalon {
+  /*content: " \25CF";*/
+  font-size: 25px;
+  color: rgb(19, 163, 53);
+  margin-right: 35px;
+}

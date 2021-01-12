@@ -1,0 +1,236 @@
+.fullcal_backdrop {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 6000;
+  top: 0;
+  right: 0;
+}
+.fullcal_slide-drawer {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: rgba(0, 0, 0, 0.699);
+  position: fixed;
+  top: 2%;
+  bottom: 8%;
+  width: 90%;
+  height: 90%;
+  min-height: 480px;
+  left: 50%;
+  z-index: 6000;
+  border-radius: 30px;
+  /*text-align: center;
+  align-items: center;*/
+  color: white;
+  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+  transform: translate(150%, 0);
+  transition: transform 0.3s ease-out;
+}
+.fullcal_slide-drawer.open {
+  transform: translate(-50%, 0);
+  z-index: 20000;
+}
+.closecal {
+  cursor: pointer;
+  justify-self: center;
+  display: flex;
+  align-items: flex-end;
+  font-size: 26px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.monthlyl {
+  cursor: pointer;
+  justify-self: left;
+  align-self: flex-end;
+  font-size: 26px;
+  padding-bottom: 20px;
+  margin-left: 20px;
+  text-align: center;
+}
+.monthlyr {
+  cursor: pointer;
+  justify-self: right;
+  align-self: flex-end;
+  font-size: 26px;
+  padding-bottom: 20px;
+  margin-right: 20px;
+  text-align: center;
+  max-width: 25vw;
+}
+.monthlyskip {
+  display: flex;
+  justify-content: space-between;
+}
+.back {
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  z-index: 1;
+  padding: 9px;
+}
+.gototoday {
+  position: fixed;
+  right: 4%;
+  top: 0.5%;
+  height: 20px;
+  z-index: 1;
+  margin-top: 7px;
+  padding: 10px;
+  font-size: 20px;
+  color: #777;
+  border-radius: 10%;
+}
+.clockdialcal {
+  display: flex;
+  position: fixed;
+  height: 12vw;
+  max-height: 12vh;
+}
+
+.clockbordercal {
+  display: flex;
+  position: fixed;
+  height: 12vw;
+  max-height: 12vh;
+  z-index: -100;
+}
+
+.CalendarContainer {
+  border-radius: 5px;
+  overflow: hidden;
+  background-image: radial-gradient(rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.878));
+}
+
+.CalendarHeader {
+  justify-content: space-between;
+}
+
+.CalendarGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  font-size: 26px;
+}
+
+.CalendarMonth {
+  color: rgb(206, 206, 206);
+  text-align: center;
+  padding: 0.5em 0.25em;
+  word-spacing: 5px;
+  user-select: none;
+  font-size: 26px;
+}
+/*
+.CalendarCell {
+  text-align: center;
+  align-self: center;
+  font-size:26px;
+  height: 9.5vw;
+  user-select: none;
+  grid-column:12vw;
+  /*grid-column: ${props => (props.index % 7) + 1} / span 1;
+}*/
+
+.CalendarWeekday {
+  align-self: center;
+  color: rgba(98, 123, 131, 0.878);
+  border-top: 2px solid rgba(98, 123, 131, 0.878);
+  border-bottom: 2px solid rgba(98, 123, 131, 0.878);
+  font-size: 15px;
+  text-align: center;
+  /*border-right: ${props => (props.index % 7) + 1 === 7 ? `none` : `2px solid #06c`};*/
+}
+
+.PrevPostDateNumber {
+  display: flex;
+  cursor: pointer;
+  grid-row: 12vw;
+  height: 12vw;
+  max-height: 12vh;
+  color: rgba(98, 123, 131, 0.878);
+  transition: all 0.1s ease-out;
+  font-size: 22px;
+  /*text-align:center;*/
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #222;
+}
+.CalendarDateNumber {
+  display: flex;
+  cursor: pointer;
+  grid-row: 12vw;
+  height: 12vw;
+  max-height: 12vh;
+  color: #c0c0c0c2;
+  transition: all 0.1s ease-out;
+  font-size: 22px;
+  /*text-align:center;*/
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(112, 152, 167, 0.429);
+  background-image: radial-gradient(
+    rgba(255, 0, 0, 0),
+    rgba(11, 57, 104, 0.374)
+  );
+}
+/*.CalendarDateNumber:hover {
+  color: white;
+}*/
+/*.PrevPostDateNumber:hover{
+  color: white;
+}*/
+.HighlightedCalendarDate {
+  display: flex;
+  color: white;
+  position: relative;
+  /*text-align:center;*/
+  align-items: center;
+  justify-content: center;
+  height: 12vw;
+  max-height: 12vh;
+  border: 1px solid #888;
+  font-size: 22px;
+} /*
+.HighlightedCalendarDate::before {
+  content: "";
+  position: absolute;
+}*/
+.TodayCalendarDate {
+  display: flex;
+  color: white;
+  position: relative;
+  /*background: transparent;
+  text-align:center;*/
+  align-items: center;
+  justify-content: center;
+  height: 12vw;
+  max-height: 12vh;
+  border: 1px solid #222;
+  font-size: 22px;
+
+  background-image: radial-gradient(
+    rgba(255, 0, 0, 0),
+    rgba(18, 200, 250, 0.483)
+  );
+} /*
+.TodayCalendarDate::after {
+  content: "";
+  position: absolute;
+}*/
+
+.placePlansOnCal {
+  display: flex;
+  position: fixed;
+  height: 12%;
+  max-height: 12%;
+}
+.containplanscal {
+  display: flex;
+  position: fixed;
+  height: 12%;
+  max-height: 12%;
+}

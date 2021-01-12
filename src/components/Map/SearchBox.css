@@ -1,0 +1,13 @@
+.searchmaplocation{
+  display:grid;
+  position:fixed;
+  left:50%;
+  transform: translateX(-50%);
+  z-index: 400;
+  color:black;
+  
+}
+
+.forplaceholdersearch::placeholder {
+  color: black;
+}

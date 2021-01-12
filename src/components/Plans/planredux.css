@@ -1,0 +1,124 @@
+.planlistredux {
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+  flex-direction: row;
+  top: 56px;
+  left: 0px;
+  z-index: 1;
+  text-decoration: none;
+}
+.relativeplans {
+  display: flex;
+  position: relative;
+  text-align: center;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 26px;
+  color: white;
+  width: auto;
+  max-height: 40vh;
+  /*top: 56px;*/
+  overflow: hidden;
+  text-decoration: none;
+  z-index: 1;
+  border-top: 3px rgb(250, 250, 250) solid;
+}
+.plantitle {
+  display: flex;
+  position: absolute;
+  padding: 13.2617px 30px;
+  border-radius: 10px;
+  justify-content: center;
+  z-index: 100;
+  bottom: 0px;
+  font-size: 26px;
+  color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  background-color: rgba(51, 51, 51, 0.855);
+}
+.planfilter {
+  position: fixed;
+  top: 0;
+  right: 56px;
+  height: 56px;
+  width: 56px;
+  z-index: 1000;
+}
+
+@media (min-width: 1200px) {
+  .eachplan {
+    border: 5px rgb(250, 250, 250) solid;
+    max-width: 500px;
+  }
+  .timeofplan {
+    width: 570px;
+  }
+  .plantitle {
+    width: 530px;
+    bottom: 10px;
+  }
+  .plantitleshort {
+    bottom: 10px;
+  }
+  .imageplan {
+    width: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .planlistredux {
+    width: 100%;
+  }
+}
+.eachplan {
+  top: 0px;
+  display: flex;
+  position: relative;
+  text-align: center;
+  align-items: flex-start;
+  font-size: 26px;
+  color: white;
+  width: auto;
+  max-height: 40vh;
+  overflow: hidden;
+  text-decoration: none;
+  z-index: 1;
+  border-top: 3px rgb(250, 250, 250) solid;
+}
+
+.notes-list-date {
+  display: grid;
+  color: #777;
+  left: 5;
+  font-size: 0.9em;
+}
+.notes-list-title {
+  display: grid;
+  color: #777;
+  font-size: 0.9em;
+}
+.boundtimes {
+  display: flex;
+  position: absolute;
+  justify-content: column;
+  padding-left: 20px;
+  padding-top: 20px;
+  height: 100px;
+  width: 100%;
+  color: white;
+  font-size: 26px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.imageplan {
+  display: flex;
+  position: relative;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  z-index: -101;
+  transform: translateX(-50%);
+  /*background-size: cover;*/
+}

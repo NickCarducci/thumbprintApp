@@ -1,0 +1,117 @@
+I won't bother you with my own ReactJS, I'll share it later on my github.
+I followed this [CodeDrip Tutorial][1] written up by [a commenter here][2], many stackoverflow questions, & finally followed this for self-managed ssl certificate with fs & https https://hackernoon.com/set-up-ssl-in-nodejs-and-express-using-openssl-f2529eab5bb
+
+CLIENT
+
+````
+if (!socket) {
+  socket = io("https://xx.xxx.xxx.xx:65080", {
+    upgrade: true,
+    reconnectionAttempts: "Infinity",
+    timeout: 1000000,
+    transports: ["websocket"],
+    transportOptions: {
+      polling: {
+        extraHeaders: {
+          "Allow-Origin-Request-Headers": "Origin, X-Requested-With, Accept"
+        }
+      }
+    }
+  });
+  socket.on("chat message", (authorId, recipient, message) => {
+    dispatch({
+      type: RECEIVE_MESSAGE,
+      payload: { authorId, recipient, message }
+    });
+  });
+}
+````
+
+BACKEND EXPRESS
+
+````
+var express = require('express')
+var app = express()
+
+app.use(function(req, res, next) {
+  //if (!origin) return null
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Origin', req.get('origin'));
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+ // Add this
+ if (req.method === 'OPTIONS') {
+
+      res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, PATCH, DELETE, OPTIONS');
+      res.header('Access-Control-Max-Age', 120);
+      return res.status(200).json({});
+  }
+
+  next();
+
+});
+````
+BACKEND HTTPS
+````
+const fs = require('fs');
+
+//const server = require('https')(fs,app).listen(65080)
+const server = require('https')
+.createServer({
+  key: fs.readFileSync('./key.pem'),
+  cert: fs.readFileSync('./cert.pem'),
+  passphrase: 'YOUR_PASSPHRASE'
+}, app)
+.listen(65080, () => {
+  console.log(`App listening on port 65080`);
+  console.log('Press Ctrl+C to quit.');
+});
+````
+BACKEND SOCKET.IO
+````
+var io = require('socket.io').listen(server);
+
+io
+  .on('connection', (socket) => {
+  socket.emit('news', { hello: 'world' });
+
+  console.log('a user connected')
+
+  socket.on('chat message', (msg) => {
+    io./*to(room)*/emit('chat message', msg);
+  });
+});
+````
+APP.YAML
+````
+# [START appengine_websockets_yaml]
+runtime: nodejs
+env: flex
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: .5
+  disk_size_gb: 10
+handlers:
+- url: /.*
+  script: this field is required, but ignored
+  secure: optional # always never optional # Require HTTPS
+network:
+  name: default
+  session_affinity: true
+  forwarded_ports:
+  - 65080
+  instance_tag: websocket
+readiness_check:
+  app_start_timeout_sec: 300
+# [END appengine_websockets_yaml]
+````
+>npm install \ gcloud init \ gcloud app deploy --verbosity=debug
+
+I am getting errors like
+
+
+  [1]: https://www.youtube.com/watch?v=hiiaHyhhwBU
+  [2]: https://github.com/goldEli/chatroom

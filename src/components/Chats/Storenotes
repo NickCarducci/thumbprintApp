@@ -1,0 +1,118 @@
+/*import React from "react";
+import { useParams } from "react-router";
+//import { useSelector } from 'react-redux'
+//import io from "socket.io-client";
+import CDB from "./chatterdb";
+
+export const CTX = React.createContext();
+
+let db = new CDB();
+
+export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
+
+const initialState = {};
+function reducer(state = initialState, action) {
+  console.log(action.payload);
+  const { authorId, recipient, message, topic } = action.payload;
+  switch (action.type) {
+    case "RECEIVE_MESSAGE":
+      //console.log({[topic]: [...state[topic], { authorId, message }]})
+      if (state[topic] === undefined) {
+        return {
+          ...state,
+          [topic]: [{ authorId, message }]
+        };
+      } else {
+        return {
+          ...state,
+          [topic]: [...state[topic], { authorId, message }]
+        };
+      }
+    default:
+      return state;
+  }
+}
+
+let socket;
+
+const sendChat = async ({ authorId, recipient, message, topic }) => {
+  console.log(authorId + recipient);
+  socket.emit("chat message", message);
+  let res = await db["saveChat"]({ authorId, recipient, message, topic });
+  return console.log(res);
+};
+
+const Store = props => {
+  let { id } = useParams();
+  //const authorId = useSelector(state => state.firebase.profile.username)
+  const [allChats, dispatch] = React.useReducer(reducer, initialState);
+
+  const onReloadNeeded = React.useCallback(async id => {
+    const loadedMessages = await db.getAllNotes(id);
+    //console.log(loadedMessages);
+    let done = [];
+    Object.keys(loadedMessages).map(keyName => {
+      done.push(loadedMessages[keyName]);
+      return done;
+    });
+    let messages = {};
+    const all = done.map(n => {
+      //console.log(n);
+      return (messages[n.note.topic] = n.note);
+    });
+    //console.log(done);
+    //console.log(messages);
+    //console.log(all);
+    done.map(n => {
+      const authorId = n.note.authorId;
+      const recipient = n.note.recipient;
+      const message = n.note.message;
+      const topic = n.note.topic;
+      return dispatch({
+        type: RECEIVE_MESSAGE,
+        payload: { authorId, recipient, message, topic }
+      });
+    });
+  }, []);
+
+  React.useEffect(() => {
+    onReloadNeeded(id);
+  }, []);
+
+  //loadMessages(data);
+  /*if (!socket) {
+    socket = io("https://35.193.181.53:65080", {
+      upgrade: true,
+      secure: true, 
+      reconnectionAttempts: "Infinity", //avoid having user reconnect manually in order to prevent dead clients after a server restart
+      timeout: 1000000, //before connect_error and connect_timeout are emitted.
+      transports: ["websocket"],
+      transportOptions: {
+        polling: {
+          extraHeaders: {
+            "Allow-Origin-Request-Headers": "Origin, X-Requested-With, Accept"
+          }
+        }
+      }
+    });
+    socket.on("chat message", (authorId, recipient, message) => {
+      dispatch({
+        type: RECEIVE_MESSAGE,
+        payload: { authorId, recipient, message }
+      });
+    });
+  }
+
+  return (
+    <CTX.Provider value={{ allChats, sendChat }}>{props.children}</CTX.Provider>
+  );
+};
+export default Store;
+
+*/
+/*var initialState = {
+    "Contact name": [{ authorId: "nick", message: "hello" }],
+    1: [{ authorId: "nick1", message: "hello1" }],
+    2: [{ authorId: "nick2", message: "hello2" }],
+    3: [{ authorId: "nick3", message: "hello3" }]
+  };*/

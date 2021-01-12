@@ -1,0 +1,291 @@
+.Planner_Header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  z-index: 2;
+  border: none;
+  text-indent: 88px;
+  padding-left: 2%;
+  height: 56px;
+  width: 100%;
+  background-color: #2fbaff;
+  color: rgba(255, 255, 255, 0.644);
+  font-size: 26px;
+}
+.Events_Header {
+  display: flex;
+  position: absolute;
+  border: none;
+  text-indent: 88px;
+  padding-left: 2%;
+  right: 0px;
+  height: 56px;
+  width: 66%;
+  background-color: #be52ff;
+  color: rgba(255, 255, 255, 0.644);
+  font-size: 26px;
+  z-index: 10;
+}
+.Map_Header {
+  display: flex;
+  position: fixed;
+  border: none;
+  text-indent: 88px;
+  padding-left: 2%;
+  z-index: 1003;
+  height: 56px;
+  width: 100%;
+  background-color: #be52ff;
+  color: rgba(255, 255, 255, 0.644);
+  font-size: 26px;
+}
+.Invites_Header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  z-index: 0;
+  border: none;
+  text-indent: 88px;
+  padding-left: 2%;
+  height: 56px;
+  width: 100%;
+  background-color: #2fbaff;
+  color: rgba(255, 255, 255, 0.644);
+  font-size: 26px;
+}
+.Chats_Header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  z-index: 0;
+  border: none;
+  text-indent: 88px;
+  padding-left: 2%;
+  height: 56px;
+  width: 100%;
+  background-color: #844fff;
+  color: rgba(255, 255, 255, 0.644);
+  font-size: 26px;
+}
+.Accounts_Header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  z-index: 0;
+  border: none;
+  text-indent: 88px;
+  padding-left: 2%;
+  height: 56px;
+  width: 100%;
+  background-color: #844fff;
+  color: rgba(255, 255, 255, 0.644);
+  font-size: 26px;
+}
+.Switch_Communities_Header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  z-index: 0;
+  border: none;
+  text-indent: 56px;
+  padding-left: 2%;
+  height: 56px;
+  width: 100%;
+  background-color: #be52ff;
+  color: rgba(255, 255, 255, 0.644);
+  font-size: 26px;
+}
+.Switch_CMap_Header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  z-index: 2000;
+  border: none;
+  text-indent: 10px;
+  padding-left: 2%;
+  height: 56px;
+  left: 15%;
+  width: 90%;
+  right: 0px;
+  background-color: #be52ff;
+  color: rgba(255, 255, 255, 0.644);
+  font-size: 26px;
+}
+@media (min-width: 800px) {
+  .Switch_CMap_Header {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    z-index: 2000;
+    border: none;
+    text-indent: 10px;
+    padding-left: 2%;
+    height: 56px;
+    left: 30%;
+    width: 70%;
+    right: 0px;
+    background-color: #be52ff;
+    color: rgba(255, 255, 255, 0.644);
+    font-size: 26px;
+  }
+}
+.Switch_Communities_Map_Header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  border: none;
+  text-indent: 88px;
+  padding-left: 2%;
+  height: 56px;
+  width: 100%;
+  background-color: #a151ff;
+  color: rgba(255, 255, 255, 0.644);
+  font-size: 26px;
+}
+
+.logo_large {
+  position: fixed;
+  height: 56px;
+  width: 56px;
+  z-index: 3;
+}
+.community {
+  position: fixed;
+  top: 7px;
+  left: 6px;
+  height: 42px;
+  width: 42px;
+  z-index: 1002;
+}
+.profile_pic {
+  position: fixed;
+  height: 56px;
+  width: 56px;
+  z-index: 1;
+}
+.switch_accounts {
+  position: fixed;
+  top: 10.5px;
+  right: 12px;
+  height: 36px;
+  width: 36px;
+  z-index: 2;
+}
+.search {
+  position: fixed;
+  left: 48px;
+  height: 56px;
+  width: 56px;
+  z-index: 2;
+  z-index: 1004;
+}
+.filter {
+  position: fixed;
+  top: 0;
+  right: 56px;
+  height: 56px;
+  width: 56px;
+  z-index: 1008;
+}
+.filter_tiles {
+  position: fixed;
+  top: 0;
+  right: 56px;
+  height: 56px;
+  width: 56px;
+  z-index: 1009;
+}
+.invitesl_large {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 56px;
+  width: 56px;
+  z-index: 2;
+}
+.square_dot {
+  position: fixed;
+  top: 0;
+  right: 0px;
+  height: 56px;
+  width: 56px;
+  z-index: 1002;
+}
+.square_dot_types {
+  position: fixed;
+  top: 0;
+  right: 0px;
+  height: 56px;
+  width: 56px;
+  z-index: 1009;
+}
+.back {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 56px;
+  width: 56px;
+  z-index: 1;
+}
+.location {
+  position: fixed;
+  top: 7px;
+  right: 6px;
+  height: 42px;
+  width: 42px;
+  z-index: 3;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.644);
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+.clicklandercity {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 56px;
+  height: 56px;
+  z-index: 1004;
+  transform: translateX(0%);
+  transition: 0.3s ease-in;
+}
+.clicklandercityfalse {
+  transform: translateX(100%);
+  transition: 0.3s ease-in;
+}
+.city_header {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  height: 36px;
+  width: 36px;
+  z-index: 1002;
+}
+.border_header {
+  position: fixed;
+  height: 56px;
+  width: 56px;
+  z-index: 1003;
+}
+.stars_header {
+  position: fixed;
+  top: 11px;
+  left: 10px;
+  height: 36px;
+  width: 36px;
+  z-index: 1002;
+}
+.sky_header {
+  position: fixed;
+  top: 8px;
+  left: 7px;
+  height: 42px;
+  width: 42px;
+  z-index: 1001;
+}

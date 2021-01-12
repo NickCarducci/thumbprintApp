@@ -1,0 +1,245 @@
+.showMap {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1000;
+  transform: translateY(0%);
+}
+.hideMap {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  transform: translateY(200%);
+  z-index: 2;
+}
+
+.mapoutline {
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  top: 56px;
+  left: 0px;
+  right: 0px;
+  /*height: 94.8vh;*/
+  background-color: #333;
+}
+.squeezer {
+  top: 56px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: fixed;
+}
+.mapoutlinesquare {
+  display: flex;
+  position: fixed;
+  height: 250px;
+  width: 250px;
+  z-index: 2;
+  background-color: #333;
+  border: white 1px solid;
+}
+.touchaction {
+  touch-action: none;
+}
+.mapzoomer {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  top: 76px;
+  left: 15px;
+  z-index: 11;
+}
+.mapzoomerbtn {
+  font-size: 40px;
+  color: white;
+  z-index: 10;
+}
+.mapzoom1 {
+  font-size: 30px;
+  color: white;
+  z-index: 10;
+}
+.mapzoom2 {
+  font-size: 30px;
+  color: white;
+  z-index: 10;
+}
+.mapzoom3 {
+  font-size: 30px;
+  color: white;
+  z-index: 10;
+}
+.mapzoom4 {
+  font-size: 30px;
+  color: white;
+  z-index: 10;
+}
+.mapheadermap {
+  display: flex;
+  position: fixed;
+  top: 0%;
+  width: 100vw;
+  z-index: 10;
+}
+.fixedsearchmap {
+  position: fixed;
+  left: 86px;
+  top: 80px;
+  z-index: 1000;
+}
+.relativesearchmap1 {
+  display: grid;
+  position: relative;
+  flex-direction: row;
+  z-index: 101;
+}
+.relativesearchmap2 {
+  display: grid;
+  position: relative;
+  flex-direction: row;
+  z-index: 100;
+}
+.closesearchmap {
+  display: flex;
+  position: fixed;
+  left: 350px;
+  top: 70px;
+  color: white;
+  font-size: 40px;
+}
+.zoomoutquick1 {
+  display: flex;
+  position: fixed;
+  background-color: rgb(0, 0, 0, 0.6);
+  color: #888;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+.zoomoutquick {
+  display: flex;
+  position: fixed;
+  background-color: rgb(0, 0, 0, 0.6);
+  color: #888;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+} /*
+@media screen and (max-device-width:.2){
+  .zoomoutquick{
+  }
+}*/
+.mapmarkercomingup {
+  transform: translate(-50%, -50%);
+}
+.mapmarkercomingupscrollno {
+  display: none;
+}
+.placesresultsholder {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  top: 5px;
+  width: 240px;
+  height: 80%;
+  background-color: #333;
+  border-radius: 10px;
+}
+.placesresults {
+  display: flex;
+  position: relative;
+  top: 0px;
+  width: auto;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  border: 1px #333 solid;
+  z-index: 100;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 5px;
+  margin: 2px;
+}
+.zoomerbackground {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.639);
+  z-index: -4;
+}
+
+.square_dotmap {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0px;
+  height: 56px;
+  width: 56px;
+  z-index: 1008;
+}
+.filtermap {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 56px;
+  height: 56px;
+  width: 56px;
+  z-index: 1008;
+}
+.filter_tilesmap {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 56px;
+  height: 56px;
+  width: 56px;
+  z-index: 1009;
+}
+
+.square_dot_typesmap {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0px;
+  height: 56px;
+  width: 56px;
+  z-index: 1009;
+}
+.citylabel {
+  display: flex;
+  position: fixed;
+  color: white;
+  z-index: 9000;
+  left: 86px;
+  top: 80px;
+}
+.closemapper {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  top: 0px;
+  left: 8px;
+  z-index: 9999;
+  font-size: 40px;
+  color: white;
+}

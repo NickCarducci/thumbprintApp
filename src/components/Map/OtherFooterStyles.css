@@ -1,0 +1,45 @@
+.Set_Location_Footer {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  z-index: 0;
+  text-align: center;
+  justify-content: center;
+  right: 10px;
+  height: 60px;
+  width:330px;
+  bottom: 10px;
+  border-radius: 25px;
+  background-color: rgb(211, 210, 210);
+  color: rgba(53, 53, 53, 0.856);
+  font-family: "Muli", sans-serif;
+  font-size: 20px;
+  src: url(./UIConainers/Icons/Fonts/Muli-ExtraLight.ttf);
+}
+.location2 {
+  position: fixed;
+  bottom: 13px;
+  right: 8px;
+  height: 56px;
+  width: 56px;
+  z-index: 3;
+}
+.Set_Location_Map_Footer {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  z-index: 0;
+  text-align: center;
+  justify-content: left;
+  padding-left:15px;
+  right: 5px;
+  height: 60px;
+  width:330px;
+  bottom: 10px;
+  border-radius: 25px;
+  background-color: rgba(53, 53, 53, 0.856);
+  color: white;
+  font-family: "Muli", sans-serif;
+  font-size: 20px;
+  src: url(./UIConainers/Icons/Fonts/Muli-ExtraLight.ttf);
+}

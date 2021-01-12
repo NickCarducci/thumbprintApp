@@ -1,0 +1,341 @@
+.topevent {
+  display: flex;
+  position: fixed;
+  width: 60%;
+  transform: translateX(0%);
+  transition: 0.2s ease-in;
+  z-index: 9999;
+}
+@media (max-width: 800px) {
+  .topevent {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    transform: translateX(0%);
+    transition: 0.2s ease-in;
+    z-index: 9999;
+  }
+}
+.topeventdone {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.chatbox {
+  display: flex;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 0px;
+  padding-top: 56px;
+  height: 100%;
+  bottom: 0px;
+  padding-bottom: 56px;
+  z-index: 2005;
+  border: 1px solid white;
+  overflow: hidden;
+}
+@media (min-width: 800px) {
+  .chatbox {
+    display: flex;
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    top: 0px;
+    bottom: 0px;
+    z-index: 2000;
+    border: 1px solid white;
+    overflow: hidden;
+  }
+}
+.messages {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  color: white;
+  border: 1px solid white;
+  background-color: #333;
+  width: 100%;
+  height: auto;
+  z-index: 2001;
+  margin-bottom: 100px;
+}
+.messages div {
+  display: flex;
+  position: relative;
+  top: 0px;
+  z-index: 1000;
+  padding: 5px;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.eventopenstarttime {
+  display: flex;
+  position: relative;
+  top: 10px;
+  width: 80%;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  padding: 0px 20px;
+  background-color: #333;
+  border: 1px solid white;
+  border-radius: 30px;
+  font-size: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2002;
+  background-color: rgba(0, 0, 0, 0.734);
+}
+.eventopenstarttime a {
+  color: white;
+}
+.timeofeventinside {
+  display: flex;
+  position: absolute;
+  padding-top: 30px;
+  width: 100%;
+  color: white;
+  font-size: 26px;
+  text-decoration: none;
+}
+.todaytomorroweventinside {
+  display: flex;
+  position: absolute;
+  padding-left: 20px;
+  padding-top: 10px;
+  color: white;
+  font-size: 20px;
+}
+.textbox4chat {
+  display: flex;
+  position: fixed;
+  background-color: #333;
+  border: 1px solid white;
+  color: #999;
+  height: 56px;
+  width: 100%;
+  bottom: 0px;
+  left: 50%;
+  z-index: 8001;
+  transform: translateX(-50%);
+  align-items: center;
+  text-indent: 10px;
+}
+.textbox4chat div {
+  display: flex;
+  position: fixed;
+  background-color: #333;
+  border: 1px solid white;
+  color: #999;
+  height: 56px;
+  width: 76px;
+  bottom: 0px;
+  left: 50%;
+  z-index: 8001;
+  transform: translateX(-50%);
+  align-items: center;
+  text-indent: 10px;
+}
+.textbox4chat::placeholder {
+  color: #999;
+}
+
+.eventedit-drawer {
+  display: flex;
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  /*text-align: center;
+  align-items: center;*/
+  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+  transform: translateX(-150%);
+  transition: transform 0.3s ease-out;
+}
+.eventedit-drawer.open {
+  display: flex;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.eventopen_Header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border: none;
+  height: 56px;
+  width: 100%;
+  z-index: 2000;
+  color: rgb(66, 82, 87);
+  background-color: white;
+  font-size: 26px;
+  border: rgb(66, 82, 87) 1px solid;
+}
+.EventEdit_Description {
+  display: flex;
+  position: fixed;
+  height: 200px;
+  width: 80%;
+  top: 68px;
+  left: 50%;
+  color: #444;
+  font-size: 26px;
+  padding-left: 56px;
+  transform: translate(-50%, 0);
+}
+.event-created {
+  font-size: 0.9em;
+  color: #aaa;
+  z-index: 1000;
+}
+
+.event-edit {
+  position: fixed;
+  margin-left: 10px;
+  top: 120px;
+  font-size: 26px;
+}
+.eventbackopen {
+  position: fixed;
+  height: 56px;
+  width: 56px;
+  right: 0px;
+  z-index: 90001;
+  transform: rotate(180deg);
+}
+.eventsettings33 {
+  display: flex;
+  position: absolute;
+  padding-top: 10px;
+  padding-left: 13px;
+  height: 36px;
+  width: 36px;
+  left: 0px;
+  transform: translateX(0%);
+  transition: all 1s ease-in;
+  z-index: 9999;
+}
+.eventsettingshidden {
+  display: flex;
+  position: fixed;
+  padding-top: 10px;
+  padding-left: 13px;
+  height: 36px;
+  width: 36px;
+  left: 0px;
+  transform: translateX(-100%);
+  transition: 1s ease-in;
+  z-index: 9999;
+}
+.eventopenbody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.eventdescription {
+  display: flex;
+  top: 0px;
+  text-align: center;
+  position: fixed;
+  padding: 20px;
+  font-size: 26px;
+  left: 0px;
+}
+.event-formedit {
+  position: fixed;
+  display: flex;
+  align-items: space-between;
+  height: 56px;
+  color: #444;
+  font-size: 26px;
+}
+.labeleventopen {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  top: 76px;
+  width: 100%;
+  border: none;
+  height: 56px;
+  width: 100%;
+  background-color: none;
+  color: rgba#333;
+  font-size: 26px;
+}
+.save {
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  margin-left: 1%;
+  top: 0.85%;
+  justify-self: left;
+  font-size: 26px;
+}
+.cancel {
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  margin-right: 10px;
+  top: 12px;
+  font-size: 26px;
+  right: 0%;
+}
+
+.dateordelete {
+  display: flex-wrap;
+  position: fixed;
+  left: 50%;
+  top: 45%;
+  justify-content: center;
+  height: 56px;
+  color: #444;
+  font-size: 26px;
+  transform: translate(-50%, 0);
+}
+.datechosen {
+  display: flex;
+  position: fixed;
+  width: 315px;
+  justify-self: center;
+  height: 100px;
+}
+.event-delete {
+  display: flex;
+  position: fixed;
+  justify-self: center;
+  font-size: 26px;
+  z-index: 1000;
+}
+.deletebtn {
+  position: fixed;
+  bottom: 0px;
+  height: 56px;
+  width: 76px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 26px;
+  z-index: 1000;
+}
+.nopageroute {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
