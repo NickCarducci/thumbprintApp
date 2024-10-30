@@ -418,6 +418,7 @@ class ClassFinder extends React.Component {
         )}
         {(this.state.openNew || this.props.pathname.startsWith("/new")) && (
           <Make
+            setAuth={(x) => this.setState(x)}
             initial={"plan"}
             auth={this.props.auth}
             navigate={this.props.navigate}
