@@ -412,9 +412,7 @@ class Types extends React.Component {
         "day party festival"
       ].includes(typeChosen)
         ? typeChosen
-        : */ this.props.subtype.includes(
-        typeChosen
-      )
+        : */ this.props.subtype.includes(typeChosen)
         ? this.props.subtype.filter((item) => item !== typeChosen)
         : this.props.subtype.length < 3
         ? [...this.props.subtype, typeChosen]
@@ -987,6 +985,7 @@ class Make extends React.PureComponent {
             note._id = docRef.id;
             this.handleSave(note, "createNote");
 
+            this.props.setAuth({ openNew: false });
             this.props.navigate("/");
           },
           (e) => console.log(e.title)
@@ -1023,10 +1022,7 @@ class Make extends React.PureComponent {
       title: this.state.title,
       titleAsArray: array,
       body: this.state.body,
-      chosenPhoto:
-        this.state.file ||
-        this.state.chosenPhoto.src
-          .medium /*{
+      chosenPhoto: this.state.file || this.state.chosenPhoto.src.medium /*{
         large: this.state.chosenPhoto.src.large,
         medium: this.state.chosenPhoto.src.medium,
         small: this.state.chosenPhoto.src.small,
