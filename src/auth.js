@@ -263,7 +263,7 @@ class ClassFinder extends React.Component {
           </form>
           <a
             href={
-              "https://wavv.art/" +
+              "https://cityscan.org/" +
               (this.state.selectedCommunity
                 ? this.state.communities.find(
                     (x) => x.id === this.state.selectedCommunity
@@ -994,7 +994,7 @@ class Auth extends React.Component {
         : undefined;
     //console.log(this.state.recipients);
     return (
-      <div style={{ maxWidth: "500px" }}>
+      <div style={{}}>
         <PromptAuth
           ref={{
             current: {
@@ -1185,6 +1185,7 @@ class Auth extends React.Component {
           </div>
         )}
         <Calendar
+          width={this.props.width}
           handleDelete={this.handleDelete}
           handleSave={this.handleSave}
           chatsopen={this.state.chatsopen}
@@ -1207,3 +1208,4 @@ class Auth extends React.Component {
   }
 }
 export default Auth;
+
