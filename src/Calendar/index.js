@@ -592,13 +592,12 @@ class Calendar extends React.Component {
       weekdayStyle = {
         borderTop: "1px solid"
       };
-    //console.log(this.props.schedule);
     return (
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr",
-          fontSize: "26px"
+          fontSize: this.props.width > 500 ? "36px" : "26px"
         }}
       >
         <div style={weekdayStyle}>Sun</div>
@@ -1099,14 +1098,8 @@ class Monthly extends React.Component {
     ) {
       this.updateNotes();
     }
-    const {
-      calByRecipient,
-      notesWithDates,
-      month,
-      year,
-      lastMonth,
-      lastYear
-    } = this.state;
+    const { calByRecipient, notesWithDates, month, year, lastMonth, lastYear } =
+      this.state;
     if (month !== lastMonth || year !== lastYear) {
       if (notesWithDates && calByRecipient !== this.state.lastCalendar) {
         this.setState({ lastCalendar: calByRecipient }, () => {
@@ -1587,6 +1580,7 @@ class Monthly extends React.Component {
           )}
           {!this.state.hideCalendar && (
             <Calendar
+              width={this.props.width}
               setCalendarSidebar={(e) =>
                 this.setState({
                   calendardaysagain: e
@@ -1620,22 +1614,28 @@ class Monthly extends React.Component {
               assignments={this.props.assignments}
             />
           )}
-          {!this.state.hideCalendar && (
-            <DayCal
-              chosen={this.state.chosen}
-              datecelestial={datecelestial}
-              notes={this.state.thePlans}
-              invites={this.state.invites}
-              schedule={[]}
-              events={[]}
-              initial={"plan"}
-              isSameDay={isSameDay}
-              handlePreviousDay={handlePreviousDay}
-              handleNextDay={handleNextDay}
-              backtotoday={() => gotoDate(datecelestial)}
-              navigate={this.props.navigate}
-            />
-          )}
+          <div
+            style={{
+              maxWidth: "500px"
+            }}
+          >
+            {!this.state.hideCalendar && (
+              <DayCal
+                chosen={this.state.chosen}
+                datecelestial={datecelestial}
+                notes={this.state.thePlans}
+                invites={this.state.invites}
+                schedule={[]}
+                events={[]}
+                initial={"plan"}
+                isSameDay={isSameDay}
+                handlePreviousDay={handlePreviousDay}
+                handleNextDay={handleNextDay}
+                backtotoday={() => gotoDate(datecelestial)}
+                navigate={this.props.navigate}
+              />
+            )}
+          </div>
           <div
             style={{
               flexDirection: "column",
